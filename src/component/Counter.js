@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 
 function Counter() {
-  const [count, setCount] = useState("");
+  const [start, setStart] = useState(6);
+  const [count, setCount] = useState(start);
 
   return (
     <div>
-      <label htmlFor="countStart">Initialisation du compteur: </label>
+      <label htmlFor="count">Initialisation du compteur: </label>
       <input
         type="text"
-        id="countStart"
-        name="countStart"
-        value={count}
-        onChange={(e) => setCount(e.target.value)}
+        id="count"
+        name="count"
+        value={start}
+        onChange={(e) => setStart(e.target.value)}
       />
       <p>Le compteur est à: {count} </p>
       <button onClick={() => setCount(count - 1)}>-</button>
